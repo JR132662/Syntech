@@ -46,8 +46,58 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Our process */}
+      <section className="relative overflow-hidden border-b border-gray-200 bg-gradient-to-b from-syntech-neutral/60 to-white py-20 sm:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(45,125,74,0.06),transparent_60%)]" aria-hidden />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="mx-auto h-1 w-16 rounded-full bg-syntech-turf" aria-hidden />
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-syntech-green">
+              Our process
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-bold text-syntech-black sm:text-4xl">
+              How we work
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-gray-600">
+              From first contact to final walkthrough—clear steps, no surprises.
+            </p>
+          </div>
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            {[
+              { step: 1, title: "Get a quote", body: "Tell us your project. We’ll respond within 24 hours with a no-obligation quote." },
+              { step: 2, title: "Site visit & design", body: "We visit your property, measure, and finalize the scope and timeline." },
+              { step: 3, title: "Prep & install", body: "Our crew preps the area and installs your turf or green wall—many jobs done in days." },
+              { step: 4, title: "Walkthrough & enjoy", body: "We do a final walkthrough with you. Then you enjoy a low-maintenance, lasting result." },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="group relative flex flex-col rounded-2xl border border-gray-200/80 border-b-2 border-b-syntech-turf bg-white p-6 shadow-sm transition-all duration-300 hover:border-syntech-turf/40 hover:shadow-lg sm:p-8"
+              >
+                <div className="relative">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-syntech-turf text-xl font-bold text-white shadow-md shadow-syntech-turf/20">
+                    {item.step}
+                  </div>
+                  <h3 className="mt-6 font-display text-xl font-semibold text-syntech-black">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                    {item.body}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-medium uppercase tracking-wider text-syntech-green mb-6">
+            Services
+          </p>
+          <h2 className="font-display text-2xl font-bold text-syntech-black sm:text-3xl mb-10">
+            What we offer
+          </h2>
           <div className="grid gap-12 sm:gap-16 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <article
