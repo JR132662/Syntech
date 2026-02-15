@@ -4,10 +4,13 @@ import Image from "next/image";
 export default function Logo({
   className = "",
   dark = false,
+  light = false,
 }: {
   className?: string;
   /** When true, show dark version for use on light backgrounds (e.g. after scrolling past hero) */
   dark?: boolean;
+  /** When true, show light version for use on dark backgrounds (e.g. footer) */
+  light?: boolean;
 }) {
   return (
     <Link
@@ -17,7 +20,7 @@ export default function Logo({
     >
       <span
         className={`relative block h-9 w-32 sm:h-10 sm:w-36 transition-[filter] duration-200 ${
-          dark ? "brightness-0" : ""
+          dark ? "brightness-0" : light ? "brightness-0 invert" : ""
         }`}
       >
         <Image
