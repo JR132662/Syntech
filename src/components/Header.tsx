@@ -124,6 +124,19 @@ export default function Header() {
               );
             })}
           </nav>
+          <div className="flex flex-row items-center justify-between gap-4 border-t border-white/10 px-4 py-5 sm:px-6">
+            <SocialIcons
+              variant="light"
+              className="[&_a]:h-9 [&_a]:w-9 [&_a]:rounded-full [&_a]:bg-white/20 [&_a]:border-0 [&_a]:text-white"
+            />
+            <Link
+              href="/contact"
+              className="rounded-full bg-syntech-turf px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-md transition hover:bg-syntech-green-light hover:text-white focus:outline-none focus:ring-2 focus:ring-syntech-turf focus:ring-offset-2 focus:ring-offset-[#4A4D4F]"
+              onClick={() => setOpen(false)}
+            >
+              Get a quote
+            </Link>
+          </div>
         </div>
       )}
     </header>
