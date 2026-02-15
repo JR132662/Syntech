@@ -1,13 +1,15 @@
-import Hero from "@/components/Hero";
-import Benefits from "@/components/Benefits";
-import ProductCategories from "@/components/ProductCategories";
-import Clients from "@/components/Clients";
-import PressSection from "@/components/PressSection";
-import Testimonials from "@/components/Testimonials";
-import InstagramSection from "@/components/InstagramSection";
-import Contact from "@/components/Contact";
-import YouTubeEmbed from "@/components/YouTubeEmbed";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+import Hero from "@/components/Hero";
+
+const Benefits = dynamic(() => import("@/components/Benefits"), { ssr: true });
+const ProductCategories = dynamic(() => import("@/components/ProductCategories"), { ssr: true });
+const Clients = dynamic(() => import("@/components/Clients"), { ssr: true });
+const PressSection = dynamic(() => import("@/components/PressSection"), { ssr: true });
+const Testimonials = dynamic(() => import("@/components/Testimonials"), { ssr: true });
+const InstagramSection = dynamic(() => import("@/components/InstagramSection"), { ssr: true });
+const Contact = dynamic(() => import("@/components/Contact"), { ssr: true });
+const YouTubeEmbed = dynamic(() => import("@/components/YouTubeEmbed"), { ssr: true });
 
 const HOMEPAGE_VIDEO_ID = "0GgnzEUfC0c";
 

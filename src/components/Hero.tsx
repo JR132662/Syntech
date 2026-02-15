@@ -13,6 +13,7 @@ const SLIDE_DURATION_MS = 5000;
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const [secondImageReady, setSecondImageReady] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -21,29 +22,44 @@ export default function Hero() {
     return () => clearInterval(id);
   }, []);
 
+  useEffect(() => {
+    const t = setTimeout(() => setSecondImageReady(true), 2500);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden px-4 pt-24 pb-20 sm:px-6">
       <div className="absolute inset-0">
-        {heroSlides.map((src, i) => (
+        <div
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          style={{ opacity: current === 0 ? 1 : 0, zIndex: current === 0 ? 1 : 0 }}
+        >
+          <Image
+            src={heroSlides[0]}
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="(max-width: 768px) 100vw, (min-width: 1280px) 1280px, 100vw"
+            quality={75}
+          />
+        </div>
+        {secondImageReady && (
           <div
-            key={src}
             className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-            style={{
-              opacity: i === current ? 1 : 0,
-              zIndex: i === current ? 1 : 0,
-            }}
+            style={{ opacity: current === 1 ? 1 : 0, zIndex: current === 1 ? 1 : 0 }}
           >
             <Image
-              src={src}
+              src={heroSlides[1]}
               alt=""
               fill
               className="object-cover object-center"
-              priority={i === 0}
-              sizes="(min-width: 1920px) 1920px, (min-width: 1280px) 1280px, 100vw"
-              quality={92}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (min-width: 1280px) 1280px, 100vw"
+              quality={75}
             />
           </div>
-        ))}
+        )}
       </div>
       {/* Dark overlay so text is readable */}
       <div className="absolute inset-0 z-[2] bg-black/40" aria-hidden />
@@ -64,7 +80,7 @@ export default function Hero() {
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
           <Link
             href="#contact"
-            className="group inline-flex w-full items-center justify-center rounded-full bg-syntech-green px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-syntech-green/30 transition hover:bg-syntech-turf hover:shadow-xl hover:shadow-syntech-turf/40 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+            className="group inline-flex w-full items-center justify-center rounded-full bg-syntech-green px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-syntech-green/30 transition hover:bg-syntech-turf hover:shadow-xl hover:shadow-syntech-green/40 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent sm:w-auto sm:px-8 sm:py-4 sm:text-base"
           >
             Get a free quote
           </Link>

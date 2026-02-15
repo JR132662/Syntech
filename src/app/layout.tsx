@@ -3,7 +3,7 @@ import { Outfit, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import StickyCta from "@/components/StickyCta";
+import StickyCtaWrapper from "@/components/StickyCtaWrapper";
 
 const outfit = Outfit({
   variable: "--font-display",
@@ -118,7 +118,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <StickyCta />
+        <StickyCtaWrapper />
       </body>
     </html>
   );
