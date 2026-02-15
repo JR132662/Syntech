@@ -4,6 +4,7 @@ import ProductCategories from "@/components/ProductCategories";
 import Clients from "@/components/Clients";
 import PressSection from "@/components/PressSection";
 import Testimonials from "@/components/Testimonials";
+import InstagramSection from "@/components/InstagramSection";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Clients />
       <PressSection />
       <Testimonials />
+      <InstagramSection />
       <Contact />
     </main>
   );
