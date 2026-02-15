@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Syntech Turf – Artificial Turf & Green Wall",
@@ -37,22 +36,12 @@ const team = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="relative min-h-[50vh] overflow-hidden pt-20">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/bal-harbour-ivy.png"
-            alt="Syntech Turf green wall and outdoor living"
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-syntech-black/60" />
-        </div>
-        <div className="relative mx-auto flex min-h-[50vh] max-w-6xl flex-col justify-end px-4 pb-16 pt-12 sm:px-6 lg:px-8">
-          <div className="h-1 w-16 bg-syntech-turf" aria-hidden />
+    <main className="min-h-screen bg-syntech-offwhite">
+      {/* Hero – no image, gradient */}
+      <section className="relative min-h-[45vh] overflow-hidden bg-gradient-to-br from-syntech-black via-[#0f2a1a] to-syntech-green pt-28 pb-20 sm:min-h-[50vh] sm:pt-32 sm:pb-24">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "48px 48px" }} aria-hidden />
+        <div className="relative mx-auto flex min-h-[40vh] max-w-6xl flex-col justify-end px-4 sm:px-6 lg:px-8">
+          <div className="h-1 w-16 rounded-full bg-syntech-turf-light" aria-hidden />
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
             About Syntech Turf
           </h1>
@@ -67,10 +56,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-2">
-              <span className="text-sm font-semibold uppercase tracking-wider text-syntech-green">
+              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-syntech-turf">
                 Our mission
               </span>
-              <h2 className="mt-4 font-display text-3xl font-bold text-syntech-black sm:text-4xl">
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-syntech-black sm:text-4xl">
                 Turnkey quality, hassle-free.
               </h2>
             </div>
@@ -90,7 +79,7 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <span className="text-sm font-semibold uppercase tracking-wider text-syntech-green">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-syntech-turf">
               The team
             </span>
             <h2 className="mt-4 font-display text-3xl font-bold text-syntech-black sm:text-4xl">
@@ -144,7 +133,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-syntech-green shadow-lg transition hover:bg-syntech-neutral hover:shadow-xl"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-syntech-turf shadow-lg transition hover:bg-syntech-neutral hover:shadow-xl"
           >
             Get a free quote
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

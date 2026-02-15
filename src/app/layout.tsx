@@ -110,7 +110,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen bg-white font-sans antialiased">
+      <body className="min-h-screen bg-syntech-offwhite font-sans antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

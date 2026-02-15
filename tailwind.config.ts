@@ -12,6 +12,7 @@ const config: Config = {
         syntech: {
           black: "#0a0a0a",
           white: "#ffffff",
+          offwhite: "#fafaf8",
           green: "#2d5a27",
           "green-light": "#7cb342",
           turf: "#2d7d4a",
@@ -22,6 +23,15 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
         display: ["var(--font-display)", "system-ui", "sans-serif"],
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 45s linear infinite",
       },
     },
   },

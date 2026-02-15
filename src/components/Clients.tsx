@@ -15,34 +15,40 @@ const clientLogos = [
 
 export default function Clients() {
   return (
-    <section className="relative overflow-hidden border-t border-gray-200 bg-syntech-neutral/50 py-20 sm:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_0%,rgba(45,125,74,0.05),transparent_70%)]" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-syntech-offwhite py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="text-sm font-medium uppercase tracking-wider text-syntech-green">
-            Our Clients
-          </p>
-          <h2 className="mt-2 font-display text-3xl font-bold text-syntech-black sm:text-4xl">
-            Driving technology for leading brands
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-syntech-turf">
+            Our clients
+          </span>
+          <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-syntech-black sm:text-4xl">
+            Trusted by leading brands
           </h2>
+          <p className="mt-3 max-w-xl mx-auto text-base text-gray-500">
+            Driving quality for hospitality, sports, and municipal partners across South Florida.
+          </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-8 lg:grid-cols-5">
+        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:mt-16 lg:grid-cols-5 lg:gap-8">
           {clientLogos.map((client) => (
             <div
               key={client.src}
-              className="group flex flex-col items-center justify-center"
+              className="group flex flex-col items-center"
             >
-              <div className="relative flex h-24 w-full items-center justify-center rounded-xl border border-gray-200/80 bg-white p-4 transition duration-300 hover:border-syntech-green/30 hover:shadow-md sm:h-28 sm:p-6">
-                <Image
-                  src={client.src}
-                  alt={client.alt}
-                  fill
-                  className="object-contain object-center p-2 transition duration-300 group-hover:opacity-90"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                />
+              <div className="relative h-20 w-full sm:h-24">
+                <div className="absolute inset-0 flex items-center justify-center rounded-xl bg-white p-4 shadow-sm ring-1 ring-gray-100 transition group-hover:ring-syntech-turf/20 sm:p-5">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={client.src}
+                      alt={client.alt}
+                      fill
+                      className="object-contain object-center p-2 opacity-80 transition group-hover:opacity-100"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    />
+                  </div>
+                </div>
               </div>
-              <span className="mt-3 text-center text-xs font-medium text-gray-500 sm:text-sm">
+              <span className="mt-3 text-center text-xs font-medium text-gray-400 sm:text-sm">
                 {client.name}
               </span>
             </div>

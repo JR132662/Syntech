@@ -12,7 +12,7 @@ const MAP_EMBED_SRC =
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white pt-24 pb-20">
+    <main className="min-h-screen bg-syntech-offwhite pt-24 pb-20">
       <Contact />
       <section className="border-t border-gray-200 bg-syntech-neutral/30 py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

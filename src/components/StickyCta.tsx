@@ -18,14 +18,14 @@ export default function StickyCta() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-200 bg-white/95 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md">
+    <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-200 bg-syntech-offwhite/95 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 sm:px-6">
         <p className="hidden text-sm text-gray-600 sm:block">
           Free quote · No obligation
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center rounded-full bg-syntech-green px-6 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-syntech-green/90 hover:shadow-lg"
+          className="inline-flex items-center rounded-full bg-syntech-turf px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-syntech-green hover:shadow-md"
         >
           Get your free quote
         </Link>

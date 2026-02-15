@@ -36,7 +36,7 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-white pt-24 pb-20">
+    <main className="min-h-screen bg-syntech-offwhite pt-24 pb-20">
       <section className="border-b border-gray-200 bg-syntech-neutral/40 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <p className="text-sm font-medium uppercase tracking-wider text-syntech-green">

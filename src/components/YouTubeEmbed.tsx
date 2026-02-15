@@ -8,12 +8,7 @@ export default function YouTubeEmbed({ videoId, title, className = "" }: YouTube
   const embedUrl = `https://www.youtube.com/embed/${videoId}?rel=0`;
   return (
     <div className={className}>
-      {title && (
-        <h3 className="font-display text-lg font-semibold text-syntech-black sm:text-xl mb-4">
-          {title}
-        </h3>
-      )}
-      <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-gray-200 bg-syntech-neutral shadow-sm">
+      <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-gray-100 shadow-lg ring-1 ring-black/5">
         <iframe
           src={embedUrl}
           title={title ?? "YouTube video"}

@@ -30,7 +30,7 @@ const portfolioItems = [
 
 export default function PortfolioPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-syntech-offwhite">
       {/* Hero */}
       <section className="relative min-h-[45vh] overflow-hidden pt-20">
         <div className="absolute inset-0">

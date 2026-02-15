@@ -5,15 +5,18 @@
 :root {
   --syntech-black: #0a0a0a;
   --syntech-white: #ffffff;
+  --syntech-offwhite: #fafaf8;
   --syntech-green: #2d5a27;
   --syntech-turf: #2d7d4a;
+  --syntech-turf-light: #e8f5e9;
   --syntech-green-light: #4caf50;
   --syntech-neutral: #f8faf8;
 }
 
 body {
   color: var(--syntech-black);
-  background: var(--syntech-white);
+  background: var(--syntech-offwhite);
+  overflow-x: hidden;
 }
 
 @layer utilities {
@@ -24,6 +27,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .gradient-turf {
