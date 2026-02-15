@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#4A4D4F] backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Logo className="h-9 w-auto shrink-0" />
 
         <nav className="hidden lg:flex lg:items-center lg:gap-1 lg:flex-1 lg:justify-center">
@@ -61,54 +61,68 @@ export default function Header() {
           </Link>
         </div>
 
-        <button
-          type="button"
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg text-white/90 transition hover:bg-white/10 hover:text-white lg:hidden"
-          onClick={() => setOpen(!open)}
-          aria-expanded={open}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block h-0.5 w-5 bg-current transition-transform ${
-              open ? "translate-y-2 rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-5 bg-current transition-opacity ${
-              open ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-5 bg-current transition-transform ${
-              open ? "-translate-y-2 -rotate-45" : ""
-            }`}
-          />
-        </button>
+        {/* Mobile: when menu open, show social + close; when closed, show hamburger */}
+        <div className="flex items-center gap-2 lg:hidden">
+          {open && (
+            <div className="flex items-center gap-2">
+              <SocialIcons
+                variant="light"
+                className="[&_a]:h-9 [&_a]:w-9 [&_a]:rounded-full [&_a]:bg-white/20 [&_a]:border-0 [&_a]:text-white"
+              />
+              <button
+                type="button"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white transition focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-[#4A4D4F] hover:bg-white/15"
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+              >
+                <span className="sr-only">Close menu</span>
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          )}
+          {!open && (
+            <button
+              type="button"
+              className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg text-white/90 transition hover:bg-white/10 hover:text-white"
+              onClick={() => setOpen(true)}
+              aria-expanded={false}
+              aria-label="Open menu"
+            >
+              <span className="block h-0.5 w-5 bg-current" />
+              <span className="block h-0.5 w-5 bg-current" />
+              <span className="block h-0.5 w-5 bg-current" />
+            </button>
+          )}
+        </div>
       </div>
 
+      {/* Mobile dropdown: full-width bars, light green / Contact teal-grey */}
       {open && (
         <div className="border-t border-white/10 bg-[#4A4D4F] lg:hidden">
-          <nav className="flex flex-col gap-0.5 px-4 py-4">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-lg px-3 py-3 text-sm font-medium uppercase tracking-wider text-white/90 hover:bg-white/10 hover:text-syntech-turf"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4">
-              <SocialIcons variant="light" />
-              <Link
-                href="/contact"
-                className="rounded-full bg-syntech-turf px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-md"
-                onClick={() => setOpen(false)}
-              >
-                Get a Quote
-              </Link>
-            </div>
+          <nav className="flex flex-col">
+            {nav.map((item) => {
+              const isActive =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+              const useDarkBar = isActive;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`block w-full px-6 py-5 text-left text-sm font-semibold uppercase tracking-wider text-white transition ${
+                    useDarkBar
+                      ? "bg-[#3d4846] hover:bg-[#35403e]"
+                      : "bg-syntech-turf hover:bg-syntech-turf/95"
+                  }`}
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       )}
