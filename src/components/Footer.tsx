@@ -12,7 +12,7 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#4A4D4F] py-12">
+    <footer className="border-t border-white/10 bg-[#4A4D4F] pb-20 pt-12 sm:pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-8 sm:flex-row">
           <Logo className="h-8 w-auto" />
