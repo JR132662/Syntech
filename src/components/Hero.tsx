@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-center overflow-hidden px-4 pt-28 pb-24 sm:px-6 sm:pt-32 sm:pb-28">
+    <section className="relative min-h-[92vh] flex flex-col justify-center overflow-hidden px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-28">
       {/* Bold gradient – no images */}
       <div
         className="absolute inset-0 -z-10"
@@ -31,10 +31,10 @@ export default function Hero() {
 
       {/* Mobile: centered, compact layout. Desktop: left-aligned, full content */}
       <div className="relative z-10 mx-auto w-full max-w-5xl text-center sm:text-left">
-        <p className="animate-hero-in text-xs font-semibold uppercase tracking-[0.25em] text-syntech-turf-light/90 sm:text-sm [animation-delay:0ms]">
+        <p className="animate-hero-in text-sm font-semibold uppercase tracking-[0.25em] text-syntech-turf-light/90 sm:text-sm [animation-delay:0ms]">
           South Florida
         </p>
-        <h1 className="animate-hero-in mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl [animation-delay:100ms]">
+        <h1 className="animate-hero-in mt-5 font-display text-5xl font-bold tracking-tight text-white sm:mt-4 sm:text-6xl md:text-7xl lg:text-8xl [animation-delay:100ms]">
           Beautiful{" "}
           <span
             className="inline-block font-display bg-gradient-to-b from-syntech-green-light to-syntech-turf bg-clip-text font-extrabold tracking-tight text-transparent"
@@ -48,7 +48,7 @@ export default function Hero() {
           <span className="text-syntech-turf-light">Zero maintenance.</span>
         </h1>
         {/* Mobile: single short line. Desktop: full paragraph */}
-        <p className="animate-hero-in mt-4 max-w-xl text-sm leading-relaxed text-white/85 sm:mx-0 sm:mt-6 sm:hidden [animation-delay:250ms]">
+        <p className="animate-hero-in mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:mx-0 sm:mt-6 sm:hidden [animation-delay:250ms]">
           Turf, putting greens & green walls—residential & commercial.
         </p>
         <p className="animate-hero-in mt-4 hidden max-w-xl text-base leading-relaxed text-white/85 sm:mx-0 sm:mt-6 sm:block sm:text-left sm:text-lg [animation-delay:250ms]">
@@ -56,10 +56,10 @@ export default function Hero() {
         </p>
 
         {/* Mobile: one primary CTA + phone as text link below. Desktop: two buttons + location */}
-        <div className="animate-hero-in mt-8 flex flex-col items-center gap-4 sm:mt-10 sm:items-start sm:flex-row sm:gap-5 [animation-delay:400ms]">
+        <div className="animate-hero-in mt-10 flex flex-col items-center gap-5 sm:mt-10 sm:items-start sm:flex-row sm:gap-5 [animation-delay:400ms]">
           <Link
             href="/contact"
-            className="inline-flex w-full max-w-[280px] items-center justify-center rounded-full bg-syntech-turf-light px-8 py-4 text-base font-semibold text-syntech-black shadow-lg transition hover:bg-white hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-syntech-turf-light focus:ring-offset-2 focus:ring-offset-transparent sm:w-auto sm:max-w-none"
+            className="inline-flex w-full max-w-[320px] items-center justify-center rounded-full bg-syntech-turf-light px-10 py-5 text-lg font-semibold text-syntech-black shadow-lg transition hover:bg-white hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-syntech-turf-light focus:ring-offset-2 focus:ring-offset-transparent sm:w-auto sm:max-w-none sm:px-8 sm:py-4 sm:text-base"
           >
             Get a free quote
           </Link>
@@ -70,7 +70,7 @@ export default function Hero() {
             (954) 478-5131
           </Link>
         </div>
-        <p className="animate-hero-in mt-5 text-center text-sm font-medium text-white/70 sm:mt-8 sm:text-left [animation-delay:550ms]">
+        <p className="animate-hero-in mt-6 text-center text-base font-medium text-white/70 sm:mt-8 sm:text-left sm:text-sm [animation-delay:550ms]">
           <Link
             href="tel:9544785131"
             className="underline decoration-white/30 underline-offset-2 hover:text-white/90 hover:decoration-white/50 sm:no-underline sm:hover:decoration-transparent"
