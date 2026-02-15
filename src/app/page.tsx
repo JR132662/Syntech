@@ -230,15 +230,20 @@ export default function Home() {
           </Link>
         </div>
         <div className="mx-auto mt-8 max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-100">
+          <a
+            href="https://www.instagram.com/syntechturf/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-100 transition hover:ring-syntech-turf/30"
+          >
             <iframe
               src="https://www.instagram.com/syntechturf/embed"
               title="Syntech Turf on Instagram"
-              className="h-[400px] w-full border-0 sm:h-[480px]"
+              className="pointer-events-none h-[400px] w-full border-0 sm:h-[480px]"
               allowFullScreen
               loading="lazy"
             />
-          </div>
+          </a>
         </div>
       </section>
 
