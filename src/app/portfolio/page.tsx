@@ -25,7 +25,7 @@ const portfolioItems = [
   { src: "/images/residence-bob.png", title: "Residential installation", location: "South Florida" },
   { src: "/images/playground-key-biscayne.png", title: "Key Biscayne playground", location: "Key Biscayne" },
   { src: "/images/pathway-06.png", title: "Garden pathway", location: "South Florida" },
-  { src: "/images/slider-05.png", title: "Rooftop green wall", location: "South Florida" },
+  { src: "/images/slider-05.png", title: "Backyard turf", location: "South Florida" },
 ];
 
 export default function PortfolioPage() {
