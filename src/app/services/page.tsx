@@ -46,6 +46,47 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* What we offer */}
+      <section className="border-b border-gray-200 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-medium uppercase tracking-wider text-syntech-green mb-6">
+            Services
+          </p>
+          <h2 className="font-display text-2xl font-bold text-syntech-black sm:text-3xl mb-10">
+            What we offer
+          </h2>
+          <div className="grid gap-12 sm:gap-16 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <article
+                key={service.slug}
+                className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:border-syntech-green/30 hover:shadow-lg"
+              >
+                <Link href={`/services/${service.slug}`} className="block">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-syntech-neutral">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6 sm:p-8">
+                    <h2 className="font-display text-xl font-semibold text-syntech-black sm:text-2xl">
+                      {service.title}
+                    </h2>
+                    <p className="mt-3 text-gray-600">{service.short}</p>
+                    <span className="mt-4 inline-flex items-center text-sm font-semibold text-syntech-green group-hover:underline">
+                      Learn more →
+                    </span>
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Our process */}
       <section className="relative overflow-hidden border-b border-gray-200 bg-gradient-to-b from-syntech-neutral/60 to-white py-20 sm:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(45,125,74,0.06),transparent_60%)]" aria-hidden />
@@ -85,46 +126,6 @@ export default function ServicesPage() {
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-medium uppercase tracking-wider text-syntech-green mb-6">
-            Services
-          </p>
-          <h2 className="font-display text-2xl font-bold text-syntech-black sm:text-3xl mb-10">
-            What we offer
-          </h2>
-          <div className="grid gap-12 sm:gap-16 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <article
-                key={service.slug}
-                className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:border-syntech-green/30 hover:shadow-lg"
-              >
-                <Link href={`/services/${service.slug}`} className="block">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-syntech-neutral">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-6 sm:p-8">
-                    <h2 className="font-display text-xl font-semibold text-syntech-black sm:text-2xl">
-                      {service.title}
-                    </h2>
-                    <p className="mt-3 text-gray-600">{service.short}</p>
-                    <span className="mt-4 inline-flex items-center text-sm font-semibold text-syntech-green group-hover:underline">
-                      Learn more →
-                    </span>
-                  </div>
-                </Link>
-              </article>
             ))}
           </div>
         </div>
