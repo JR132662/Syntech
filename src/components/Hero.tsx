@@ -45,65 +45,54 @@ export default function Hero() {
           </div>
         ))}
       </div>
-      {/* Overlay: subtle vignette + light gradient for readability */}
-      <div
-        className="absolute inset-0 z-[2]"
-        aria-hidden
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.2) 100%)",
-        }}
-      />
-      <div className="absolute inset-0 z-[2] bg-white/20" aria-hidden />
+      {/* Dark overlay so text is readable */}
+      <div className="absolute inset-0 z-[2] bg-black/40" aria-hidden />
 
-      <div className="relative z-10 mx-auto w-full max-w-[min(100%-2rem,28rem)] text-center sm:max-w-4xl">
-        <div className="relative rounded-2xl border border-white/60 bg-white/95 px-4 py-6 shadow-2xl shadow-syntech-black/10 backdrop-blur-md sm:px-12 sm:py-12">
-          <div className="absolute left-1/2 top-0 h-1 w-16 -translate-x-1/2 -translate-y-0 rounded-b-full bg-syntech-turf sm:w-20" aria-hidden />
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-syntech-green sm:text-sm sm:tracking-[0.2em]">
-            Premium artificial turf & green walls
-          </p>
-          <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-syntech-black sm:mt-4 sm:text-5xl md:text-6xl lg:text-7xl">
-            Beautiful turf.
-            <br />
-            <span className="text-syntech-green">Zero maintenance.</span>
-          </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-base leading-relaxed text-gray-700 sm:mt-6 sm:text-xl">
-            South Florida&apos;s choice for residential lawns, putting greens, sports fields, and commercial spaces. Expert installation, lasting quality.
-          </p>
-          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
-            <Link
-              href="#contact"
-              className="group inline-flex w-full items-center justify-center rounded-full bg-syntech-green px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-syntech-green/25 transition hover:bg-syntech-turf hover:shadow-xl hover:shadow-syntech-green/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-syntech-green focus:ring-offset-2 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
-            >
-              Get a free quote
-            </Link>
-            <Link
-              href="tel:9544785131"
-              className="inline-flex w-full items-center justify-center rounded-full border-2 border-syntech-green bg-white px-6 py-3 text-sm font-semibold text-syntech-green transition hover:bg-syntech-turf-light hover:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-green focus:ring-offset-2 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
-            >
-              (954) 478-5131
-            </Link>
-          </div>
-          <p className="mt-4 text-xs font-medium text-gray-600 sm:mt-6 sm:text-sm">
-            Serving Pembroke Pines, Broward & South Florida
-          </p>
+      <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
+        <div className="h-1 w-16 mx-auto rounded-full bg-syntech-turf sm:w-20" aria-hidden />
+        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-syntech-turf-light sm:text-sm">
+          Premium artificial turf & green walls
+        </p>
+        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:mt-4 sm:text-5xl md:text-6xl lg:text-7xl [text-shadow:0_2px_8px_rgba(0,0,0,0.3)]">
+          Beautiful turf.
+          <br />
+          <span className="text-syntech-turf-light">Zero maintenance.</span>
+        </h1>
+        <p className="mt-4 max-w-2xl mx-auto text-base leading-relaxed text-white/90 sm:mt-6 sm:text-xl [text-shadow:0_1px_4px_rgba(0,0,0,0.3)]">
+          South Florida&apos;s choice for residential lawns, putting greens, sports fields, and commercial spaces. Expert installation, lasting quality.
+        </p>
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+          <Link
+            href="#contact"
+            className="group inline-flex w-full items-center justify-center rounded-full bg-syntech-green px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-syntech-green/30 transition hover:bg-syntech-turf hover:shadow-xl hover:shadow-syntech-turf/40 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+          >
+            Get a free quote
+          </Link>
+          <Link
+            href="tel:9544785131"
+            className="inline-flex w-full items-center justify-center rounded-full border-2 border-white/80 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20 hover:border-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+          >
+            (954) 478-5131
+          </Link>
         </div>
+        <p className="mt-4 text-xs font-medium text-white/80 sm:mt-6 sm:text-sm [text-shadow:0_1px_2px_rgba(0,0,0,0.3)]">
+          Serving Pembroke Pines, Broward & South Florida
+        </p>
+      </div>
 
-        {/* Slide indicators */}
-        <div className="mt-5 flex justify-center gap-2 sm:mt-8" aria-hidden>
-          {heroSlides.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              className="h-2 w-2 rounded-full transition-all duration-300 sm:h-2.5 sm:w-2.5"
-              style={{
-                backgroundColor: i === current ? "var(--syntech-turf)" : "rgba(255,255,255,0.6)",
-                transform: i === current ? "scale(1.25)" : "scale(1)",
-              }}
-              aria-label={`Slide ${i + 1}`}
-            />
-          ))}
-        </div>
+      {/* Slide indicators */}
+      <div className="relative z-10 mt-8 flex justify-center gap-2" aria-hidden>
+        {heroSlides.map((_, i) => (
+          <span
+            key={i}
+            className="h-2 w-2 rounded-full transition-all duration-300 sm:h-2.5 sm:w-2.5"
+            style={{
+              backgroundColor: i === current ? "var(--syntech-turf-light)" : "rgba(255,255,255,0.5)",
+              transform: i === current ? "scale(1.25)" : "scale(1)",
+            }}
+            aria-hidden
+          />
+        ))}
       </div>
     </section>
   );
