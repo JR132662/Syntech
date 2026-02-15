@@ -61,15 +61,10 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile: when menu open, show social + close; when closed, show hamburger */}
+        {/* Mobile: when menu open show close; when closed show hamburger */}
         <div className="flex items-center gap-2 lg:hidden">
           {open && (
-            <div className="flex items-center gap-2">
-              <SocialIcons
-                variant="light"
-                className="[&_a]:h-9 [&_a]:w-9 [&_a]:rounded-full [&_a]:bg-white/20 [&_a]:border-0 [&_a]:text-white"
-              />
-              <button
+            <button
                 type="button"
                 className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white transition focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-[#4A4D4F] hover:bg-white/15"
                 onClick={() => setOpen(false)}
@@ -80,7 +75,6 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-            </div>
           )}
           {!open && (
             <button
