@@ -52,6 +52,9 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:w-full">
             <p className="text-sm font-medium text-white/90">
               © {new Date().getFullYear()} Syntech Turf. All rights reserved.
+              <Link href="/privacy" className="ml-2 text-white/80 hover:text-syntech-turf hover:underline">
+                Privacy Policy
+              </Link>
             </p>
             <p className="text-sm font-medium text-white/90">
               Pembroke Pines, FL · (954) 478-5131
