@@ -32,52 +32,58 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-syntech-offwhite pt-24 pb-20 dark:bg-gray-900">
-      <section className="border-b border-gray-200 bg-syntech-neutral/40 py-16 sm:py-20 dark:border-gray-800 dark:bg-gray-800/40">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-syntech-turf dark:text-syntech-green-light">
+      <section className="border-b border-gray-200/80 bg-syntech-neutral/30 py-14 sm:py-16 dark:border-gray-800 dark:bg-gray-800/30">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-syntech-turf dark:text-syntech-green-light">
             Services
           </p>
-          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-syntech-black dark:text-white sm:text-5xl">
+          <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-syntech-black dark:text-white sm:text-4xl md:text-5xl">
             What we do
           </h1>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
+          <p className="mt-4 text-base text-gray-600 dark:text-gray-300 sm:text-lg">
             From residential lawns to commercial green walls, we deliver turnkey installations across South Florida.
           </p>
         </div>
       </section>
 
-      {/* What we offer */}
-      <section className="border-b border-gray-200 py-16 sm:py-20 dark:border-gray-800 dark:bg-gray-900">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-syntech-turf dark:text-syntech-green-light mb-6">
-            Services
-          </p>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-syntech-black dark:text-white sm:text-4xl mb-10">
-            What we offer
-          </h2>
-          <div className="grid gap-12 sm:gap-16 md:grid-cols-2 lg:grid-cols-3">
+      {/* What we offer – wider cards, sleek layout */}
+      <section className="border-b border-gray-200/80 py-16 sm:py-20 dark:border-gray-800 dark:bg-gray-900">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 sm:mb-14">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-syntech-turf dark:text-syntech-green-light">
+              What we offer
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-bold tracking-tight text-syntech-black dark:text-white sm:text-3xl">
+              Three ways we transform outdoor space
+            </h2>
+          </div>
+          <div className="grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <article
                 key={service.slug}
-                className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:border-syntech-turf/40 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:border-syntech-green-light/40"
+                className="group relative overflow-hidden rounded-2xl border border-gray-200/90 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-300 hover:border-syntech-turf/30 hover:shadow-[0_12px_40px_-12px_rgba(45,125,74,0.15)] dark:border-gray-700/90 dark:bg-gray-800 dark:hover:border-syntech-green-light/30 dark:hover:shadow-[0_12px_40px_-12px_rgba(124,179,66,0.12)]"
               >
                 <Link href={`/services/${service.slug}`} className="block">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-syntech-neutral dark:bg-gray-700">
+                  <div className="relative aspect-[5/3] overflow-hidden bg-syntech-neutral/50 dark:bg-gray-700">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover transition duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition duration-500 ease-out group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
                   </div>
                   <div className="p-6 sm:p-8">
-                    <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white sm:text-2xl">
+                    <h2 className="font-display text-xl font-semibold tracking-tight text-syntech-black dark:text-white sm:text-2xl">
                       {service.title}
                     </h2>
-                    <p className="mt-3 text-gray-600 dark:text-gray-300">{service.short}</p>
-                    <span className="mt-4 inline-flex items-center text-sm font-semibold text-syntech-turf dark:text-syntech-green-light group-hover:underline">
-                      Learn more →
+                    <p className="mt-3 text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
+                      {service.short}
+                    </p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-syntech-turf dark:text-syntech-green-light transition-all group-hover:gap-2.5">
+                      Learn more
+                      <span className="transition-transform group-hover:translate-x-0.5">→</span>
                     </span>
                   </div>
                 </Link>
@@ -88,9 +94,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Our process */}
-      <section className="relative overflow-hidden border-b border-gray-200 bg-gradient-to-b from-syntech-neutral/60 to-white py-20 sm:py-24 dark:border-gray-800 dark:from-gray-800/60 dark:to-gray-900">
+      <section className="relative overflow-hidden border-b border-gray-200/80 bg-gradient-to-b from-syntech-neutral/50 to-white py-20 sm:py-24 dark:border-gray-800 dark:from-gray-800/50 dark:to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(45,125,74,0.06),transparent_60%)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(124,179,66,0.08),transparent_60%)]" aria-hidden />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="mx-auto h-1 w-16 rounded-full bg-syntech-turf dark:bg-syntech-green-light" aria-hidden />
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-syntech-green dark:text-syntech-green-light">
