@@ -159,9 +159,9 @@ export default function Home() {
                 {pressLogos.map((src) => (
                   <div
                     key={src}
-                    className="relative flex min-h-0 min-w-0 items-center justify-center rounded-xl bg-gray-50 py-6 px-4 ring-1 ring-gray-100 transition hover:ring-syntech-turf/20 dark:bg-gray-700/50 dark:ring-gray-600 dark:hover:ring-syntech-green-light/30 sm:py-8 sm:px-6"
+                    className="relative flex min-h-0 min-w-0 items-center justify-center rounded-xl bg-gray-50 py-8 px-5 ring-1 ring-gray-100 transition hover:ring-syntech-turf/20 dark:bg-gray-700/50 dark:ring-gray-600 dark:hover:ring-syntech-green-light/30 sm:py-10 sm:px-6"
                   >
-                    <div className="relative h-12 w-full max-w-[140px] sm:h-14">
+                    <div className="relative h-28 w-full sm:h-36">
                       <Image
                         src={src}
                         alt="Press"

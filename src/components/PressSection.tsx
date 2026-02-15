@@ -49,13 +49,13 @@ export default function PressSection() {
               key={item.src}
               className="group flex flex-col"
             >
-              <div className="flex flex-col overflow-hidden rounded-2xl bg-gray-50/80 p-6 transition hover:bg-gray-50 hover:shadow-md sm:flex-col">
-                <div className="relative h-24 w-full sm:h-28">
+              <div className="flex flex-col overflow-hidden rounded-2xl bg-gray-50/80 p-6 transition hover:bg-gray-50 hover:shadow-md sm:flex-col sm:p-8">
+                <div className="relative h-40 w-full min-h-[160px] sm:h-48 sm:min-h-[192px]">
                   <Image
                     src={item.src}
                     alt={item.alt}
                     fill
-                    className="object-contain object-left transition group-hover:opacity-90"
+                    className="object-contain object-center transition group-hover:opacity-90"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                 </div>
