@@ -56,41 +56,41 @@ export default function Hero() {
       />
       <div className="absolute inset-0 z-[2] bg-white/20" aria-hidden />
 
-      <div className="relative z-10 mx-auto max-w-4xl text-center">
-        <div className="relative rounded-2xl border border-white/60 bg-white/95 px-6 py-10 shadow-2xl shadow-syntech-black/10 backdrop-blur-md sm:px-12 sm:py-12">
-          <div className="absolute left-1/2 top-0 h-1 w-20 -translate-x-1/2 -translate-y-0 rounded-b-full bg-syntech-turf" aria-hidden />
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-syntech-green">
+      <div className="relative z-10 mx-auto w-full max-w-[min(100%-2rem,28rem)] text-center sm:max-w-4xl">
+        <div className="relative rounded-2xl border border-white/60 bg-white/95 px-4 py-6 shadow-2xl shadow-syntech-black/10 backdrop-blur-md sm:px-12 sm:py-12">
+          <div className="absolute left-1/2 top-0 h-1 w-16 -translate-x-1/2 -translate-y-0 rounded-b-full bg-syntech-turf sm:w-20" aria-hidden />
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-syntech-green sm:text-sm sm:tracking-[0.2em]">
             Premium artificial turf & green walls
           </p>
-          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-syntech-black sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-syntech-black sm:mt-4 sm:text-5xl md:text-6xl lg:text-7xl">
             Beautiful turf.
             <br />
             <span className="text-syntech-green">Zero maintenance.</span>
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-lg leading-relaxed text-gray-700 sm:text-xl">
+          <p className="mt-4 max-w-2xl mx-auto text-base leading-relaxed text-gray-700 sm:mt-6 sm:text-xl">
             South Florida&apos;s choice for residential lawns, putting greens, sports fields, and commercial spaces. Expert installation, lasting quality.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
             <Link
               href="#contact"
-              className="group inline-flex w-full items-center justify-center rounded-full bg-syntech-green px-8 py-4 text-base font-semibold text-white shadow-lg shadow-syntech-green/25 transition hover:bg-syntech-turf hover:shadow-xl hover:shadow-syntech-green/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-syntech-green focus:ring-offset-2 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center rounded-full bg-syntech-green px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-syntech-green/25 transition hover:bg-syntech-turf hover:shadow-xl hover:shadow-syntech-green/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-syntech-green focus:ring-offset-2 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
             >
               Get a free quote
             </Link>
             <Link
               href="tel:9544785131"
-              className="inline-flex w-full items-center justify-center rounded-full border-2 border-syntech-green bg-white px-8 py-4 text-base font-semibold text-syntech-green transition hover:bg-syntech-turf-light hover:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-green focus:ring-offset-2 sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full border-2 border-syntech-green bg-white px-6 py-3 text-sm font-semibold text-syntech-green transition hover:bg-syntech-turf-light hover:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-green focus:ring-offset-2 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
             >
               (954) 478-5131
             </Link>
           </div>
-          <p className="mt-6 text-sm font-medium text-gray-600">
+          <p className="mt-4 text-xs font-medium text-gray-600 sm:mt-6 sm:text-sm">
             Serving Pembroke Pines, Broward & South Florida
           </p>
         </div>
 
         {/* Slide indicators */}
-        <div className="mt-8 flex justify-center gap-2" aria-hidden>
+        <div className="mt-5 flex justify-center gap-2 sm:mt-8" aria-hidden>
           {heroSlides.map((_, i) => (
             <button
               key={i}
