@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --syntech-black: #0a0a0a;
+  --syntech-white: #ffffff;
+  --syntech-green: #2d5a27;
+  --syntech-turf: #2d7d4a;
+  --syntech-green-light: #4caf50;
+  --syntech-neutral: #f8faf8;
+}
+
+body {
+  color: var(--syntech-black);
+  background: var(--syntech-white);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-turf {
+  background: linear-gradient(135deg, rgba(45, 125, 74, 0.08) 0%, rgba(232, 245, 233, 0.5) 100%);
+}
+
+.gradient-hero-overlay {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.92) 100%);
+}
