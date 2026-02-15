@@ -36,7 +36,7 @@ const team = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-syntech-offwhite">
+    <main className="min-h-screen bg-syntech-offwhite dark:bg-gray-900">
       {/* Hero – no image, gradient */}
       <section className="relative min-h-[45vh] overflow-hidden bg-gradient-to-br from-syntech-black via-[#0f2a1a] to-syntech-green pt-28 pb-20 sm:min-h-[50vh] sm:pt-32 sm:pb-24">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "48px 48px" }} aria-hidden />
@@ -52,19 +52,19 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="relative border-y border-syntech-neutral bg-gradient-to-b from-syntech-neutral/50 to-white py-20 sm:py-24">
+      <section className="relative border-y border-syntech-neutral bg-gradient-to-b from-syntech-neutral/50 to-white py-20 sm:py-24 dark:border-gray-800 dark:from-gray-800/50 dark:to-gray-900">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-2">
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-syntech-turf">
+              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-syntech-turf dark:text-syntech-green-light">
                 Our mission
               </span>
-              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-syntech-black sm:text-4xl">
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-syntech-black dark:text-white sm:text-4xl">
                 Turnkey quality, hassle-free.
               </h2>
             </div>
             <div className="lg:col-span-3">
-              <p className="text-lg leading-relaxed text-gray-700 sm:text-xl">
+              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 sm:text-xl">
                 We are the premier luxury brand Artificial Turf and Green Wall contractor
                 servicing Builders, Designers, Architects, and Homeowners. Our goal is to
                 provide a hassle free, turnkey solution, using the highest quality products
@@ -79,10 +79,10 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-syntech-turf">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-syntech-turf dark:text-syntech-green-light">
               The team
             </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-syntech-black sm:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-bold text-syntech-black dark:text-white sm:text-4xl">
               People behind the turf
             </h2>
           </div>
@@ -90,22 +90,22 @@ export default function AboutPage() {
             {team.map((member) => (
               <article
                 key={member.email}
-                className="group relative overflow-hidden rounded-2xl border border-gray-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:border-syntech-turf/30 hover:shadow-lg hover:shadow-syntech-turf/5"
+                className="group relative overflow-hidden rounded-2xl border border-gray-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:border-syntech-turf/30 hover:shadow-lg hover:shadow-syntech-turf/5 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-syntech-green-light/30 dark:hover:shadow-syntech-green-light/5"
               >
-                <div className="absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-syntech-turf/10 transition-transform duration-300 group-hover:scale-150" />
+                <div className="absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-syntech-turf/10 dark:bg-syntech-green-light/10 transition-transform duration-300 group-hover:scale-150" />
                 <div className="relative">
                   <div className="flex items-baseline justify-between gap-4">
                     <div>
-                      <h3 className="font-display text-xl font-semibold text-syntech-black">
+                      <h3 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
                         {member.name}
                       </h3>
-                      <p className="mt-1 text-sm font-medium text-syntech-green">
+                      <p className="mt-1 text-sm font-medium text-syntech-green dark:text-syntech-green-light">
                         {member.role}
                       </p>
                     </div>
                     <a
                       href={`mailto:${member.email}`}
-                      className="shrink-0 rounded-full bg-syntech-neutral p-2.5 text-syntech-green transition-colors hover:bg-syntech-turf hover:text-white"
+                      className="shrink-0 rounded-full bg-syntech-neutral p-2.5 text-syntech-green transition-colors hover:bg-syntech-turf hover:text-white dark:bg-gray-700 dark:text-syntech-green-light dark:hover:bg-syntech-green-light dark:hover:text-syntech-black"
                       aria-label={`Email ${member.name}`}
                     >
                       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -113,7 +113,7 @@ export default function AboutPage() {
                       </svg>
                     </a>
                   </div>
-                  <p className="mt-5 text-gray-600 leading-relaxed">{member.bio}</p>
+                  <p className="mt-5 text-gray-600 leading-relaxed dark:text-gray-300">{member.bio}</p>
                 </div>
               </article>
             ))}
@@ -133,7 +133,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-syntech-turf shadow-lg transition hover:bg-syntech-neutral hover:shadow-xl"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-syntech-turf shadow-lg transition hover:bg-syntech-neutral hover:shadow-xl dark:hover:bg-gray-100"
           >
             Get a free quote
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

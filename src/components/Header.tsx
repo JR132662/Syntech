@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import SocialIcons from "./SocialIcons";
+import DarkModeToggle from "./DarkModeToggle";
+import { useTheme } from "@/context/ThemeContext";
 
 const nav = [
   { label: "Home", href: "/" },
@@ -20,6 +22,7 @@ const HERO_SCROLL_THRESHOLD = 380;
 
 export default function Header() {
   const pathname = usePathname();
+  const { theme } = useTheme();
   const [open, setOpen] = useState(false);
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
 
@@ -30,18 +33,22 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const overHero = !scrolledPastHero;
+  const overHero = pathname === "/" && !scrolledPastHero;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-sm transition-colors ${
         overHero
-          ? "border-white/10 bg-transparent"
-          : "border-gray-200/80 bg-syntech-offwhite/95"
+          ? "border-white/10 bg-transparent dark:border-white/10"
+          : "border-gray-200/80 bg-syntech-offwhite/95 dark:border-gray-800 dark:bg-gray-900/95"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Logo className="h-9 w-auto shrink-0 sm:h-10" dark={scrolledPastHero} />
+        <Logo
+          className="h-9 w-auto shrink-0 sm:h-10"
+          dark={theme === "light" && (scrolledPastHero || pathname === "/services" || pathname === "/faq" || pathname === "/contact" || pathname === "/blog")}
+          light={theme === "dark" && (scrolledPastHero || pathname === "/services" || pathname === "/faq" || pathname === "/contact" || pathname === "/blog")}
+        />
 
         <nav className="hidden lg:flex lg:items-center lg:gap-1 lg:flex-1 lg:justify-center">
           {nav.map((item) => {
@@ -53,14 +60,14 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`group relative px-4 py-4 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-syntech-turf focus:ring-offset-2 focus:ring-offset-white ${
+                className={`group relative px-4 py-4 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-syntech-turf focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900 ${
                   overHero
                     ? isActive
                       ? "text-syntech-turf-light"
                       : "text-white/90 hover:text-white"
                     : isActive
-                      ? "text-syntech-green"
-                      : "text-syntech-black hover:text-syntech-turf"
+                      ? "text-syntech-green dark:text-syntech-green-light"
+                      : "text-syntech-black hover:text-syntech-turf dark:text-gray-200 dark:hover:text-white"
                 }`}
               >
                 {item.label}
@@ -75,8 +82,9 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden lg:flex lg:items-center lg:gap-4 shrink-0">
-          <SocialIcons variant={overHero ? "light" : "default"} />
+        <div className="hidden lg:flex lg:items-center lg:gap-2 shrink-0">
+          <DarkModeToggle overHero={overHero} />
+          <SocialIcons variant={theme === "dark" || overHero ? "light" : "default"} />
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-syntech-turf px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-syntech-green focus:outline-none focus:ring-2 focus:ring-syntech-turf focus:ring-offset-2 focus:ring-offset-white"
@@ -86,6 +94,7 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
+          <DarkModeToggle overHero={overHero} />
           {open && (
             <button
               type="button"
@@ -115,7 +124,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-white/85 backdrop-blur-md lg:hidden">
+        <div className="border-t border-white/10 bg-white/85 backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/95 lg:hidden">
           <nav className="flex flex-col">
             {nav.map((item) => {
               const isActive =
@@ -128,8 +137,8 @@ export default function Header() {
                   href={item.href}
                   className={`block w-full px-6 py-4 text-left text-sm font-medium transition ${
                     isActive
-                      ? "bg-syntech-turf/20 text-syntech-green"
-                      : "text-syntech-black hover:bg-syntech-turf/10 hover:text-syntech-turf"
+                      ? "bg-syntech-turf/20 text-syntech-green dark:bg-syntech-green-light/20 dark:text-syntech-green-light"
+                      : "text-syntech-black hover:bg-syntech-turf/10 hover:text-syntech-turf dark:text-gray-100 dark:hover:bg-syntech-green-light/10 dark:hover:text-syntech-green-light"
                   }`}
                   onClick={() => setOpen(false)}
                 >
@@ -138,8 +147,8 @@ export default function Header() {
               );
             })}
           </nav>
-          <div className="flex flex-row items-center justify-between gap-4 border-t border-white/20 px-4 py-4 sm:px-6">
-            <SocialIcons variant="default" />
+          <div className="flex flex-row items-center justify-between gap-4 border-t border-white/20 px-4 py-4 dark:border-gray-700 sm:px-6">
+            <SocialIcons variant={theme === "dark" ? "light" : "default"} />
             <Link
               href="/contact"
               className="rounded-full bg-syntech-turf px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-syntech-green"

@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Outfit, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCtaWrapper from "@/components/StickyCtaWrapper";
+import { ThemeProvider } from "@/context/ThemeContext";
+
+const themeScript = `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}})();`;
 
 const outfit = Outfit({
   variable: "--font-display",
@@ -109,16 +113,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen bg-syntech-offwhite font-sans antialiased">
+    <html lang="en" className={`${outfit.variable} ${dmSans.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen bg-white font-sans antialiased dark:bg-gray-900 dark:text-gray-100">
+        <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Header />
-        {children}
-        <Footer />
-        <StickyCtaWrapper />
+        <ThemeProvider>
+          <Header />
+          {children}
+          <Footer />
+          <StickyCtaWrapper />
+        </ThemeProvider>
       </body>
     </html>
   );

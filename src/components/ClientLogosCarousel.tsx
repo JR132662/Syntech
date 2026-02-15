@@ -21,7 +21,7 @@ export default function ClientLogosCarousel({ logos }: { logos: string[] }) {
         {duplicated.map((src, i) => (
           <div
             key={`${src}-${i}`}
-            className="flex flex-shrink-0 items-center justify-center rounded-xl bg-white p-3 shadow-sm ring-1 ring-gray-100 transition hover:ring-syntech-turf/30 hover:shadow-md"
+            className="flex flex-shrink-0 items-center justify-center rounded-xl bg-white p-3 shadow-sm ring-1 ring-gray-100 transition hover:ring-syntech-turf/30 hover:shadow-md dark:bg-gray-800 dark:ring-gray-700 dark:hover:ring-syntech-green-light/30"
             style={{
               width: LOGO_WIDTH,
               height: LOGO_HEIGHT,

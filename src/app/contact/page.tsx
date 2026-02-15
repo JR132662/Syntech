@@ -12,17 +12,17 @@ const MAP_EMBED_SRC =
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-syntech-offwhite pt-24 pb-20">
+    <main className="min-h-screen bg-syntech-offwhite pt-24 pb-20 dark:bg-gray-900">
       <Contact />
-      <section className="border-t border-gray-200 bg-syntech-neutral/30 py-12 sm:py-16">
+      <section className="border-t border-gray-200 bg-syntech-neutral/30 py-12 sm:py-16 dark:border-gray-800 dark:bg-gray-800/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-2xl font-bold text-syntech-black sm:text-3xl text-center">
+          <h2 className="font-display text-2xl font-bold text-syntech-black dark:text-white sm:text-3xl text-center">
             Find us
           </h2>
-          <p className="mt-2 text-center text-gray-600 text-sm sm:text-base">
+          <p className="mt-2 text-center text-gray-600 dark:text-gray-300 text-sm sm:text-base">
             21113 Johnson St #106, Pembroke Pines, FL 33029
           </p>
-          <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
             <iframe
               src={MAP_EMBED_SRC}
               title="Syntech Turf location – Pembroke Pines, FL"

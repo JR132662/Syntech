@@ -36,16 +36,16 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-syntech-offwhite pt-24 pb-20">
-      <section className="border-b border-gray-200 bg-syntech-neutral/40 py-16 sm:py-20">
+    <main className="min-h-screen bg-syntech-offwhite pt-24 pb-20 dark:bg-gray-900">
+      <section className="border-b border-gray-200 bg-syntech-neutral/40 py-16 sm:py-20 dark:border-gray-800 dark:bg-gray-800/40">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-medium uppercase tracking-wider text-syntech-green">
+          <p className="text-sm font-medium uppercase tracking-wider text-syntech-green dark:text-syntech-green-light">
             FAQ
           </p>
-          <h1 className="mt-4 font-display text-4xl font-bold text-syntech-black sm:text-5xl">
+          <h1 className="mt-4 font-display text-4xl font-bold text-syntech-black dark:text-white sm:text-5xl">
             Frequently asked questions
           </h1>
-          <p className="mt-6 text-lg text-gray-600">
+          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
             Common questions about artificial turf, putting greens, and green walls. Don’t see yours? Request a free quote and we’ll answer in person.
           </p>
         </div>
@@ -55,11 +55,11 @@ export default function FAQPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <dl className="space-y-8">
             {faqs.map((faq, i) => (
-              <div key={i} className="border-b border-gray-200 pb-8 last:border-0 last:pb-0">
-                <dt className="font-display text-lg font-semibold text-syntech-black sm:text-xl">
+              <div key={i} className="border-b border-gray-200 pb-8 last:border-0 last:pb-0 dark:border-gray-700">
+                <dt className="font-display text-lg font-semibold text-syntech-black dark:text-white sm:text-xl">
                   {faq.q}
                 </dt>
-                <dd className="mt-3 text-gray-600 leading-relaxed">
+                <dd className="mt-3 text-gray-600 leading-relaxed dark:text-gray-300">
                   {faq.a}
                 </dd>
               </div>
@@ -78,7 +78,7 @@ export default function FAQPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-syntech-green shadow-lg transition hover:bg-syntech-neutral"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-syntech-green shadow-lg transition hover:bg-syntech-neutral dark:hover:bg-gray-100"
           >
             Get your free quote
           </Link>

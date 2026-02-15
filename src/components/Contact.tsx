@@ -19,26 +19,26 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="border-t border-gray-200 bg-white py-16 sm:py-24 lg:py-28">
+    <section id="contact" className="border-t border-gray-200 bg-white py-16 sm:py-24 lg:py-28 dark:border-gray-800 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-2">
-            <h2 className="font-display text-2xl font-bold tracking-tight text-syntech-black sm:text-3xl">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-syntech-black dark:text-white sm:text-3xl">
               Get your free quote
             </h2>
-            <p className="mt-3 text-sm text-syntech-turf font-medium">
+            <p className="mt-3 text-sm text-syntech-turf font-medium dark:text-syntech-green-light">
               No obligation · Response within 24 hours
             </p>
             <div className="mt-8 space-y-6">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">Phone</p>
-                <a href="tel:9544785131" className="mt-1 block font-semibold text-syntech-black hover:text-syntech-turf">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">Phone</p>
+                <a href="tel:9544785131" className="mt-1 block font-semibold text-syntech-black hover:text-syntech-turf dark:text-gray-100 dark:hover:text-syntech-green-light">
                   (954) 478-5131
                 </a>
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">Address</p>
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">Address</p>
+                <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
                   21113 Johnson Street, #106<br />
                   Pembroke Pines, FL 33029
                 </p>
@@ -47,11 +47,11 @@ export default function Contact() {
           </div>
           <div className="lg:col-span-3">
             {submitted ? (
-              <div className="rounded-xl border-l-4 border-syntech-turf bg-syntech-offwhite p-8">
-                <p className="font-semibold text-syntech-turf">Thanks for reaching out.</p>
-                <p className="mt-2 text-sm text-gray-600">
+              <div className="rounded-xl border-l-4 border-syntech-turf bg-syntech-offwhite p-8 dark:border-syntech-green-light dark:bg-gray-800">
+                <p className="font-semibold text-syntech-turf dark:text-syntech-green-light">Thanks for reaching out.</p>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                   We&apos;ll get back to you soon. Need us now? Call{" "}
-                  <a href="tel:9544785131" className="font-medium text-syntech-turf hover:underline">
+                  <a href="tel:9544785131" className="font-medium text-syntech-turf hover:underline dark:text-syntech-green-light">
                     (954) 478-5131
                   </a>
                   .
@@ -61,7 +61,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-syntech-black">
+                    <label htmlFor="name" className="block text-sm font-medium text-syntech-black dark:text-gray-200">
                       Name *
                     </label>
                     <input
@@ -69,12 +69,12 @@ export default function Contact() {
                       name="name"
                       type="text"
                       required
-                      className="mt-2 block w-full rounded-lg border border-gray-200 bg-syntech-offwhite px-4 py-3 text-syntech-black placeholder-gray-400 focus:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-turf/20"
+                      className="mt-2 block w-full rounded-lg border border-gray-200 bg-syntech-offwhite px-4 py-3 text-syntech-black placeholder-gray-400 focus:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-turf/20 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500 dark:focus:border-syntech-green-light dark:focus:ring-syntech-green-light/20"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-syntech-black">
+                    <label htmlFor="email" className="block text-sm font-medium text-syntech-black dark:text-gray-200">
                       Email *
                     </label>
                     <input
@@ -82,25 +82,25 @@ export default function Contact() {
                       name="email"
                       type="email"
                       required
-                      className="mt-2 block w-full rounded-lg border border-gray-200 bg-syntech-offwhite px-4 py-3 text-syntech-black placeholder-gray-400 focus:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-turf/20"
+                      className="mt-2 block w-full rounded-lg border border-gray-200 bg-syntech-offwhite px-4 py-3 text-syntech-black placeholder-gray-400 focus:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-turf/20 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500 dark:focus:border-syntech-green-light dark:focus:ring-syntech-green-light/20"
                       placeholder="you@example.com"
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-syntech-black">
+                  <label htmlFor="phone" className="block text-sm font-medium text-syntech-black dark:text-gray-200">
                     Phone
                   </label>
                   <input
                     id="phone"
                     name="phone"
                     type="tel"
-                    className="mt-2 block w-full rounded-lg border border-gray-200 bg-syntech-offwhite px-4 py-3 text-syntech-black placeholder-gray-400 focus:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-turf/20"
+                    className="mt-2 block w-full rounded-lg border border-gray-200 bg-syntech-offwhite px-4 py-3 text-syntech-black placeholder-gray-400 focus:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-turf/20 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500 dark:focus:border-syntech-green-light dark:focus:ring-syntech-green-light/20"
                     placeholder="(954) 555-1234"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-syntech-black">
+                  <label htmlFor="message" className="block text-sm font-medium text-syntech-black dark:text-gray-200">
                     Project details *
                   </label>
                   <textarea
@@ -108,14 +108,14 @@ export default function Contact() {
                     name="message"
                     rows={4}
                     required
-                    className="mt-2 block w-full rounded-lg border border-gray-200 bg-syntech-offwhite px-4 py-3 text-syntech-black placeholder-gray-400 focus:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-turf/20"
+                    className="mt-2 block w-full rounded-lg border border-gray-200 bg-syntech-offwhite px-4 py-3 text-syntech-black placeholder-gray-400 focus:border-syntech-turf focus:outline-none focus:ring-2 focus:ring-syntech-turf/20 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500 dark:focus:border-syntech-green-light dark:focus:ring-syntech-green-light/20"
                     placeholder="Residential lawn, putting green, sports field, green wall, etc."
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full rounded-full bg-syntech-turf py-3.5 text-sm font-semibold text-white transition hover:bg-syntech-green focus:outline-none focus:ring-2 focus:ring-syntech-turf focus:ring-offset-2 disabled:opacity-70 sm:w-auto sm:px-10"
+                  className="w-full rounded-full bg-syntech-turf py-3.5 text-sm font-semibold text-white transition hover:bg-syntech-green focus:outline-none focus:ring-2 focus:ring-syntech-turf focus:ring-offset-2 disabled:opacity-70 dark:focus:ring-offset-gray-900 sm:w-auto sm:px-10"
                 >
                   {loading ? "Sending…" : "Request free quote"}
                 </button>

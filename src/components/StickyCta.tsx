@@ -18,9 +18,9 @@ export default function StickyCta() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-200 bg-syntech-offwhite/95 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md">
+    <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-200 bg-syntech-offwhite/95 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/95 dark:shadow-[0_-4px_20px_rgba(0,0,0,0.3)]">
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 sm:px-6">
-        <p className="hidden text-sm text-gray-600 sm:block">
+        <p className="hidden text-sm text-gray-600 dark:text-gray-300 sm:block">
           Free quote · No obligation
         </p>
         <Link
@@ -31,7 +31,7 @@ export default function StickyCta() {
         </Link>
         <a
           href="tel:9544785131"
-          className="text-sm font-medium text-syntech-green hover:text-syntech-green/90"
+          className="text-sm font-medium text-syntech-green hover:text-syntech-green/90 dark:text-syntech-green-light dark:hover:text-syntech-green-light/90"
         >
           (954) 478-5131
         </a>

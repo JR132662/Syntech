@@ -30,7 +30,7 @@ const portfolioItems = [
 
 export default function PortfolioPage() {
   return (
-    <main className="min-h-screen bg-syntech-offwhite">
+    <main className="min-h-screen bg-syntech-offwhite dark:bg-gray-900">
       {/* Hero */}
       <section className="relative min-h-[45vh] overflow-hidden pt-20">
         <div className="absolute inset-0">
@@ -56,12 +56,12 @@ export default function PortfolioPage() {
       </section>
 
       {/* Intro */}
-      <section className="border-b border-syntech-neutral bg-syntech-neutral/30 py-12 sm:py-14">
+      <section className="border-b border-syntech-neutral bg-syntech-neutral/30 py-12 sm:py-14 dark:border-gray-800 dark:bg-gray-800/30">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <span className="text-sm font-semibold uppercase tracking-wider text-syntech-green">
+          <span className="text-sm font-semibold uppercase tracking-wider text-syntech-green dark:text-syntech-green-light">
             Our work
           </span>
-          <p className="mt-4 text-lg text-gray-700 sm:text-xl">
+          <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 sm:text-xl">
             Residential lawns, putting greens, sports fields, and green walls—from the coast to commercial.
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function PortfolioPage() {
             {portfolioItems.map((item) => (
               <article
                 key={item.src}
-                className="group relative overflow-hidden rounded-2xl bg-syntech-neutral shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-syntech-turf/10"
+                className="group relative overflow-hidden rounded-2xl bg-syntech-neutral shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-syntech-turf/10 dark:bg-gray-800 dark:hover:shadow-syntech-green-light/10"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -92,11 +92,11 @@ export default function PortfolioPage() {
                     <p className="mt-1 text-sm text-white/80">{item.location}</p>
                   </div>
                 </div>
-                <div className="relative p-4 sm:p-5 transition-colors duration-300 group-hover:bg-white/90">
-                  <h3 className="font-display font-semibold text-syntech-black transition-opacity duration-200 sm:group-hover:opacity-0">
+                <div className="relative p-4 sm:p-5 transition-colors duration-300 group-hover:bg-white/90 dark:group-hover:bg-gray-700/90">
+                  <h3 className="font-display font-semibold text-syntech-black dark:text-white transition-opacity duration-200 sm:group-hover:opacity-0">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500 transition-opacity duration-200 sm:group-hover:opacity-0">{item.location}</p>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 transition-opacity duration-200 sm:group-hover:opacity-0">{item.location}</p>
                   <Link
                     href="/contact"
                     className="absolute inset-x-4 bottom-4 top-4 flex items-center justify-center rounded-xl bg-syntech-green px-4 py-3 text-sm font-semibold text-white opacity-0 shadow-md transition-all duration-200 sm:group-hover:opacity-100 sm:bottom-5 sm:inset-x-5 sm:top-5"
@@ -111,7 +111,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden border-t border-syntech-neutral bg-syntech-green py-16 sm:py-20">
+      <section className="relative overflow-hidden border-t border-syntech-neutral bg-syntech-green py-16 sm:py-20 dark:border-gray-700">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,255,255,0.15),transparent)]" />
         <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
@@ -122,7 +122,7 @@ export default function PortfolioPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-syntech-green shadow-lg transition hover:bg-syntech-neutral hover:shadow-xl"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-syntech-green shadow-lg transition hover:bg-syntech-neutral hover:shadow-xl dark:hover:bg-gray-100"
           >
             Get a quote for your project
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

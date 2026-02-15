@@ -15,8 +15,17 @@
 
 body {
   color: var(--syntech-black);
-  background: var(--syntech-offwhite);
+  background: #ffffff;
   overflow-x: hidden;
+}
+
+html:not(.dark) body {
+  background: #ffffff;
+}
+
+.dark body {
+  color: #e5e7eb;
+  background: #111827;
 }
 
 @layer utilities {

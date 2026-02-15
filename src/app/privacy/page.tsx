@@ -9,18 +9,18 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-syntech-offwhite pt-24 pb-20">
+    <main className="min-h-screen bg-syntech-offwhite pt-24 pb-20 dark:bg-gray-900">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <h1 className="font-display text-4xl font-bold text-syntech-black sm:text-5xl">
+        <h1 className="font-display text-4xl font-bold text-syntech-black dark:text-white sm:text-5xl">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-gray-600">
+        <p className="mt-4 text-gray-600 dark:text-gray-300">
           Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
         </p>
 
-        <div className="mt-12 space-y-10 text-gray-700 leading-relaxed">
+        <div className="mt-12 space-y-10 text-gray-700 dark:text-gray-300 leading-relaxed">
           <section>
-            <h2 className="font-display text-xl font-semibold text-syntech-black">
+            <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
               Introduction
             </h2>
             <p className="mt-3">
@@ -29,25 +29,25 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl font-semibold text-syntech-black">
+            <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
               Information we collect
             </h2>
-            <p className="mt-3">
+            <p className="mt-3 dark:text-gray-300">
               We may collect information you provide directly, such as when you fill out our contact or quote form. This may include your name, email address, phone number, and project details. We may also collect information automatically when you use our site, such as your IP address, browser type, and pages visited (e.g., through cookies or similar technologies).
             </p>
           </section>
 
           <section>
-            <h2 className="font-display text-xl font-semibold text-syntech-black">
+            <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
               How we use your information
             </h2>
-            <p className="mt-3">
+            <p className="mt-3 dark:text-gray-300">
               We use the information we collect to respond to your inquiries, provide quotes, improve our website and services, and communicate with you about your project. We do not sell your personal information to third parties.
             </p>
           </section>
 
           <section>
-            <h2 className="font-display text-xl font-semibold text-syntech-black">
+            <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
               Sharing of information
             </h2>
             <p className="mt-3">
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl font-semibold text-syntech-black">
+            <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
               Cookies and tracking
             </h2>
             <p className="mt-3">
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl font-semibold text-syntech-black">
+            <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
               Security
             </h2>
             <p className="mt-3">
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl font-semibold text-syntech-black">
+            <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
               Your choices
             </h2>
             <p className="mt-3">
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl font-semibold text-syntech-black">
+            <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
               Changes to this policy
             </h2>
             <p className="mt-3">
@@ -92,16 +92,16 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl font-semibold text-syntech-black">
+            <h2 className="font-display text-xl font-semibold text-syntech-black dark:text-white">
               Contact us
             </h2>
             <p className="mt-3">
               If you have questions about this privacy policy or your personal information, please contact us at{" "}
-              <a href="mailto:edgar@syntechturf.com" className="text-syntech-green underline hover:no-underline">
+              <a href="mailto:edgar@syntechturf.com" className="text-syntech-green dark:text-syntech-green-light underline hover:no-underline">
                 edgar@syntechturf.com
               </a>
               {" "}or call{" "}
-              <a href="tel:9544785131" className="text-syntech-green underline hover:no-underline">
+              <a href="tel:9544785131" className="text-syntech-green dark:text-syntech-green-light underline hover:no-underline">
                 (954) 478-5131
               </a>
               . Our address is 21113 Johnson Street, #106, Pembroke Pines, FL 33029.
@@ -109,10 +109,10 @@ export default function PrivacyPage() {
           </section>
         </div>
 
-        <div className="mt-12 border-t border-gray-200 pt-8">
+        <div className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
           <Link
             href="/"
-            className="text-syntech-green font-semibold hover:underline"
+            className="text-syntech-green dark:text-syntech-green-light font-semibold hover:underline"
           >
             ← Back to home
           </Link>
