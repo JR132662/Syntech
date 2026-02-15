@@ -21,13 +21,13 @@ export default function StickyCta() {
     <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-200 bg-white/95 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 sm:px-6">
         <p className="hidden text-sm text-gray-600 sm:block">
-          Ready for a free quote?
+          Free quote · No obligation
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center rounded-full bg-syntech-green px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-syntech-green/90"
+          className="inline-flex items-center rounded-full bg-syntech-green px-6 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-syntech-green/90 hover:shadow-lg"
         >
-          Get a quote
+          Get your free quote
         </Link>
         <a
           href="tel:9544785131"

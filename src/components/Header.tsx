@@ -8,8 +8,10 @@ import SocialIcons from "./SocialIcons";
 
 const nav = [
   { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
   { label: "Blog", href: "/blog" },
 ];

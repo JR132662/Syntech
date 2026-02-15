@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import InstagramSection from "@/components/InstagramSection";
 import Contact from "@/components/Contact";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
+import Link from "next/link";
 
 const HOMEPAGE_VIDEO_ID = "0GgnzEUfC0c";
 
@@ -35,6 +36,19 @@ export default function Home() {
       <PressSection />
       <Testimonials />
       <InstagramSection />
+      <section className="border-t border-gray-200 bg-syntech-neutral/50 py-10 sm:py-12">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="text-lg font-medium text-gray-700 sm:text-xl">
+            Ready to get started? Request your free quote below—no obligation.
+          </p>
+          <Link
+            href="#contact"
+            className="mt-4 inline-flex items-center text-syntech-green font-semibold hover:underline"
+          >
+            Jump to quote form →
+          </Link>
+        </div>
+      </section>
       <Contact />
     </main>
   );

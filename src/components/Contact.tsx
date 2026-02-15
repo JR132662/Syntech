@@ -22,7 +22,10 @@ export default function Contact() {
     <section id="contact" className="relative border-t border-gray-200 bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-bold text-syntech-black sm:text-4xl">
+          <p className="text-sm font-semibold uppercase tracking-wider text-syntech-green">
+            Free quote · No obligation · Response within 24 hours
+          </p>
+          <h2 className="mt-4 font-display text-3xl font-bold text-syntech-black sm:text-4xl">
             Get your free quote
           </h2>
           <p className="mt-4 text-gray-600">
