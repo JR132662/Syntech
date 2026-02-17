@@ -6,7 +6,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCtaWrapper from "@/components/StickyCtaWrapper";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { getSiteUrl } from "@/lib/site-url";
 
+const siteUrl = getSiteUrl();
 const themeScript = `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}})();`;
 
 const outfit = Outfit({
@@ -20,8 +22,6 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
 });
-
-const siteUrl = "https://syntechturf.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -92,7 +92,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Syntech Turf",
   description: "Premium artificial turf and green wall solutions in South Florida. Residential, commercial, sports & golf.",
-  url: "https://syntechturf.com",
+  url: siteUrl,
   telephone: "+1-954-478-5131",
   address: {
     "@type": "PostalAddress",
@@ -103,7 +103,7 @@ const jsonLd = {
     addressCountry: "US",
   },
   areaServed: "South Florida",
-  image: "https://syntechturf.com/logo.png",
+  image: `${siteUrl}/logo.png`,
   sameAs: ["https://www.instagram.com/syntechturf"],
 };
 
