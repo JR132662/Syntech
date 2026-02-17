@@ -6,9 +6,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCtaWrapper from "@/components/StickyCtaWrapper";
 import { ThemeProvider } from "@/context/ThemeContext";
-import { getSiteUrl } from "@/lib/site-url";
-
-const siteUrl = getSiteUrl();
 const themeScript = `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}})();`;
 
 const outfit = Outfit({
@@ -23,8 +20,10 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   title: {
     default: "Syntech Turf | Artificial Turf & Green Wall | Florida",
     template: "%s | Syntech Turf",
@@ -81,9 +80,11 @@ export const metadata: Metadata = {
     description: "Premium artificial turf and green wall solutions in South Florida. Get a free quote today.",
     images: ["/logo.png"],
   },
-  alternates: {
-    canonical: siteUrl,
-  },
+  alternates: siteUrl
+    ? {
+        canonical: siteUrl,
+      }
+    : undefined,
   category: "construction",
 };
 
@@ -103,7 +104,7 @@ const jsonLd = {
     addressCountry: "US",
   },
   areaServed: "South Florida",
-  image: `${siteUrl}/logo.png`,
+  image: siteUrl ? `${siteUrl}/logo.png` : "/logo.png",
   sameAs: ["https://www.instagram.com/syntechturf"],
 };
 

@@ -1,14 +1,15 @@
 /**
- * Base URL for the site: share links, Open Graph, canonical, sitemap.
- * Uses NEXT_PUBLIC_SITE_URL if set, otherwise Vercel deployment URL, otherwise localhost.
- * No fallback to a production domain so the link always matches where the app is actually running.
+ * Base URL for sitemap/robots.
+ *
+ * - In production, set NEXT_PUBLIC_SITE_URL to your public site URL.
+ * - In development (when unset), we fall back to localhost so sitemap/robots still work locally.
+ *
+ * NOTE: We intentionally do NOT guess a production domain or use Vercel dashboard URLs,
+ * so social shares can rely on the actual page URL the user is on.
  */
 export function getSiteUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
-  }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
   }
   const port = process.env.PORT ?? 3000;
   return `http://localhost:${port}`;
